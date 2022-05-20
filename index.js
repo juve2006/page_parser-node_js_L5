@@ -2,14 +2,13 @@ import cheerio from 'cheerio'
 import fs from 'fs';
 import request from 'request';
 import { zipFile } from './zipper.js';
-import { sendMail } from "./nodemailer.js";
+import { send } from "./nodemailer.js";
 
 const output = 'vac.txt';
 
 const writeStream = fs.createWriteStream(output);
 
 const url = 'https://inventorsoft.co/careers';
-
 
 request(url, function (err, res, body) {
     if (!err && res.statusCode === 200){
@@ -26,7 +25,7 @@ request(url, function (err, res, body) {
         });
         writeStream.end();
         zipFile(output);
-        sendMail();
+        send();
     } else {
         throw err;
     }
