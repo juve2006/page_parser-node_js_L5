@@ -1,15 +1,17 @@
 {
-  "name": "page_parser-node_js_l5",
+  "name": "page_parser-node_js-5",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "nodemailer.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node nodemailer.js"
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
+    "nodemailer": "^6.7.5",
     "request": "^2.88.2"
   }
 }
